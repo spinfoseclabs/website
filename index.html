@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SP Infosec Labs | Cybersecurity Partners</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CANVAS BACKGROUND -->
+  <canvas id="matrixCanvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <!-- SVG LOGO -->
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+          <defs>
+            <linearGradient id="shieldGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00d4ff"/>
+              <stop offset="100%" stop-color="#0066cc"/>
+            </linearGradient>
+            <linearGradient id="glowGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#0066cc" stop-opacity="0.1"/>
+            </linearGradient>
+          </defs>
+          <!-- Outer shield glow -->
+          <path d="M22 2L4 9v11c0 10.5 7.7 20.3 18 22.7C32.3 40.3 40 30.5 40 20V9L22 2z" fill="url(#glowGrad)" stroke="#00d4ff" stroke-width="0.5" opacity="0.4"/>
+          <!-- Main shield -->
+          <path d="M22 4L6 10.5v10C6 30 13.1 39 22 41.2C30.9 39 38 30 38 20.5v-10L22 4z" fill="url(#shieldGrad)" opacity="0.15"/>
+          <path d="M22 4L6 10.5v10C6 30 13.1 39 22 41.2C30.9 39 38 30 38 20.5v-10L22 4z" fill="none" stroke="url(#shieldGrad)" stroke-width="1.5"/>
+          <!-- Circuit lines -->
+          <line x1="14" y1="16" x2="18" y2="16" stroke="#00d4ff" stroke-width="0.8" opacity="0.7"/>
+          <line x1="18" y1="16" x2="18" y2="20" stroke="#00d4ff" stroke-width="0.8" opacity="0.7"/>
+          <line x1="26" y1="28" x2="30" y2="28" stroke="#00d4ff" stroke-width="0.8" opacity="0.7"/>
+          <line x1="26" y1="24" x2="26" y2="28" stroke="#00d4ff" stroke-width="0.8" opacity="0.7"/>
+          <!-- Circuit dots -->
+          <circle cx="14" cy="16" r="1" fill="#00d4ff" opacity="0.9"/>
+          <circle cx="18" cy="20" r="1" fill="#00d4ff" opacity="0.9"/>
+          <circle cx="30" cy="28" r="1" fill="#00d4ff" opacity="0.9"/>
+          <circle cx="26" cy="24" r="1" fill="#00d4ff" opacity="0.9"/>
+          <!-- SP text -->
+          <text x="22" y="27" text-anchor="middle" fill="url(#shieldGrad)" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">SP</text>
+        </svg>
+        <span class="brand-name">SP <span class="brand-accent">Infosec</span> Labs</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-outline nav-cta">Get a Free Assessment</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Trusted Cybersecurity Partner
+      </div>
+      <h1 class="hero-title">
+        Fortifying <span class="text-gradient">Digital Frontiers</span>
+      </h1>
+      <p class="hero-tagline">Your trusted partner in securing what matters most —<br>your digital assets, your business, your future.</p>
+      <p class="hero-sub">From web and mobile application security to cloud infrastructure and DevSecOps, SP Infosec Labs delivers end-to-end security solutions built for today's threat landscape.</p>
+      <div class="hero-actions">
+        <a href="#services" class="btn btn-primary">Explore Services</a>
+        <a href="#contact" class="btn btn-ghost">Talk to an Expert &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Do</span>
+        <h2>End-to-End <span class="text-gradient">Security Services</span></h2>
+        <p>Comprehensive cybersecurity solutions tailored to protect every layer of your digital infrastructure.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card" data-delay="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="8" width="36" height="26" rx="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M6 30h36" stroke="currentColor" stroke-width="2"/>
+              <path d="M18 38h12M24 34v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 20l4 4-4 4M22 26h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Web Application Security</h3>
+          <p>OWASP Top 10 assessments, penetration testing, source code review, and runtime protection for web apps.</p>
+          <ul class="service-features">
+            <li>Penetration Testing</li>
+            <li>VAPT &amp; Code Review</li>
+            <li>WAF Configuration</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+
+        <div class="service-card" data-delay="100">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="16" y="4" width="16" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 36h8M24 32v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M10 18c0-7.7 6.3-14 14-14s14 6.3 14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3>Mobile Application Security</h3>
+          <p>Static and dynamic analysis for iOS and Android apps, ensuring secure data handling and API communication.</p>
+          <ul class="service-features">
+            <li>iOS &amp; Android VAPT</li>
+            <li>SAST / DAST Analysis</li>
+            <li>OWASP Mobile Top 10</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+
+        <div class="service-card" data-delay="200">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 16l16-8 16 8v12l-16 12L8 28V16z" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 8v32M8 16l16 12 16-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>API Security</h3>
+          <p>Comprehensive API security testing — authentication, authorization flaws, injection attacks, and business logic vulnerabilities.</p>
+          <ul class="service-features">
+            <li>REST &amp; GraphQL Testing</li>
+            <li>OAuth / JWT Review</li>
+            <li>Rate Limiting &amp; Auth Audits</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+
+        <div class="service-card" data-delay="300">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 30c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <ellipse cx="24" cy="30" rx="10" ry="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 30c0-5.5 4.5-10 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+              <path d="M24 18V10M20 10h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Cloud Security</h3>
+          <p>Cloud configuration audits, IAM policy review, infrastructure hardening for AWS, Azure, and GCP environments.</p>
+          <ul class="service-features">
+            <li>Cloud CSPM Assessments</li>
+            <li>IAM &amp; Policy Hardening</li>
+            <li>CIS Benchmark Compliance</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+
+        <div class="service-card" data-delay="400">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 10V6M24 42v-4M10 24H6M42 24h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14.1 14.1l-2.8-2.8M36.7 36.7l-2.8-2.8M36.7 11.3l-2.8 2.8M14.1 33.9l-2.8 2.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.6"/>
+            </svg>
+          </div>
+          <h3>DevSecOps</h3>
+          <p>Integrate security at every stage of your CI/CD pipeline — shift left and build secure-by-default software delivery.</p>
+          <ul class="service-features">
+            <li>CI/CD Security Gates</li>
+            <li>Container &amp; IaC Scanning</li>
+            <li>SAST / SCA Integration</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+
+        <div class="service-card" data-delay="500">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Brain / neural network icon for AI -->
+              <circle cx="24" cy="20" r="9" stroke="currentColor" stroke-width="2"/>
+              <circle cx="24" cy="20" r="4" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+              <path d="M24 11V8M24 32v3M15.1 15.1l-2.1-2.1M35 35l-2.1-2.1M11 20H8M40 20h-3M15.1 24.9l-2.1 2.1M35 5l-2.1 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M18 20h2M28 20h2M24 16v2M24 22v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+              <circle cx="24" cy="38" r="2" fill="currentColor" opacity="0.5"/>
+              <path d="M22 32v4M26 32v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3>AI Security</h3>
+          <p>Securing AI/ML systems against adversarial attacks, prompt injection, model theft, data poisoning, and LLM-specific vulnerabilities.</p>
+          <ul class="service-features">
+            <li>LLM &amp; GenAI Pen Testing</li>
+            <li>Prompt Injection &amp; Jailbreak</li>
+            <li>AI Model &amp; Supply Chain Risk</li>
+          </ul>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Who We Are</span>
+        <h2>Security-First Mindset, <span class="text-gradient">Built Into Everything</span></h2>
+        <p>Founded by practitioners who have spent years on both sides of the security landscape — offense and defense — we think like attackers so you can stay ahead of them.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card" data-delay="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="2"/>
+              <path d="M8 42c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Practitioner-Founded</h3>
+          <p>Built by security professionals with hands-on offensive and defensive experience across industries — not just consultants.</p>
+          <ul class="service-features">
+            <li>Red Team &amp; Blue Team Veterans</li>
+            <li>OWASP &amp; PTES Methodology</li>
+            <li>Industry-Certified Researchers</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-delay="100">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 12h36M6 24h24M6 36h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="38" cy="34" r="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M35 34l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Actionable Reporting</h3>
+          <p>No jargon-heavy filler. Clear, prioritized findings with risk ratings and fix guidance your dev team can act on immediately.</p>
+          <ul class="service-features">
+            <li>Executive &amp; Technical Reports</li>
+            <li>CVSS Risk Scoring</li>
+            <li>Step-by-Step Remediation</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-delay="200">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 6L8 13v11c0 10 7 19.3 16 21.5C33 43.3 40 34 40 24V13L24 6z" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 24l5 5 11-11" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Adversarial Thinking</h3>
+          <p>We emulate real-world threat actors to uncover what automated scanners miss — manual, creative, and thorough at every engagement.</p>
+          <ul class="service-features">
+            <li>Manual Pen Testing First</li>
+            <li>Threat Actor Simulation</li>
+            <li>Business Logic Attacks</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-delay="300">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2M13 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM43 21v-2a4 4 0 0 0-3-3.87M31 7.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <rect x="22" y="26" width="22" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M28 34h10M33 30v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Long-Term Partnership</h3>
+          <p>We don't test and disappear. We stay engaged through remediation, retest, and continuous improvement cycles alongside your team.</p>
+          <ul class="service-features">
+            <li>Free Remediation Retest</li>
+            <li>Ongoing Security Advisory</li>
+            <li>Dedicated Point of Contact</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-delay="400">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="8" width="36" height="32" rx="3" stroke="currentColor" stroke-width="2"/>
+              <path d="M6 18h36" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 28h8M14 34h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="34" cy="31" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M34 29v2l1.5 1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Vendor-Neutral Guidance</h3>
+          <p>We recommend what is right for your environment — tools, frameworks, and controls selected for your risk profile, not our margins.</p>
+          <ul class="service-features">
+            <li>Technology-Agnostic Advice</li>
+            <li>Open-Source First Approach</li>
+            <li>Unbiased Control Selection</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-delay="500">
+          <div class="service-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 8v4M24 36v4M8 24h4M36 24h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 24a6 6 0 1 1 12 0 6 6 0 0 1-12 0z" stroke="currentColor" stroke-width="2"/>
+              <circle cx="24" cy="24" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Full-Lifecycle Coverage</h3>
+          <p>From design-time threat modeling to post-deployment monitoring — security integrated at every phase of your SDLC, not bolted on at the end.</p>
+          <ul class="service-features">
+            <li>Threat Modeling &amp; Design Review</li>
+            <li>Shift-Left Security Integration</li>
+            <li>Post-Deploy Monitoring Support</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-us" id="why-us">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why SP Infosec Labs</span>
+        <h2>The <span class="text-gradient">Difference</span> We Bring</h2>
+        <p>We don't just find vulnerabilities — we become your strategic security partner.</p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <h3>Attacker's Mindset</h3>
+          <p>Our team thinks adversarially — emulating real-world threat actors to uncover what automated scanners miss.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <h3>Zero-BS Reporting</h3>
+          <p>No jargon-heavy filler. Just clear, prioritized vulnerabilities with risk ratings and fix guidance your team will understand.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <h3>Full-Lifecycle Coverage</h3>
+          <p>From design-time threat modeling to post-deployment monitoring — security integrated at every phase of your SDLC.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">04</div>
+          <h3>Vendor-Neutral Guidance</h3>
+          <p>We recommend what's right for your environment — not what's most profitable for us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="container cta-inner">
+      <div>
+        <h2>Ready to Secure Your Digital Assets?</h2>
+        <p>Get a free initial consultation and security assessment scoping call.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-lg">Book Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <span class="section-tag">Get In Touch</span>
+        <h2>Let's Secure <span class="text-gradient">Your Business</span></h2>
+        <p>Tell us about your security challenges. Our team will get back to you within 24 hours with a tailored approach.</p>
+        <div class="contact-methods">
+       
+          <div class="contact-method">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.4 19a19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-2.92-8.37A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .37 1.97.72 2.9a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.93.35 1.9.59 2.9.72A2 2 0 0 1 22 16.92z" stroke="#00d4ff" stroke-width="2"/>
+            </svg>
+            <span>+919491489880</span>
+          </div>
+          <div class="contact-method">
+            <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+              <circle cx="12" cy="12" r="10" stroke="#00d4ff" stroke-width="2"/>
+              <line x1="2" y1="12" x2="22" y2="12" stroke="#00d4ff" stroke-width="2"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="#00d4ff" stroke-width="2"/>
+            </svg>
+            <span>www.spinfoseclabs.com</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="entry.1824448311" placeholder="John Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Business Email</label>
+            <input type="email" id="email" name="entry.1483309244" placeholder="john@company.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="entry.1703785913" placeholder="Your Company" />
+        </div>
+        <div class="form-group">
+          <label for="service">Service Interested In</label>
+          <select id="service">
+            <option value="">Select a service...</option>
+            <option>Web Application Security</option>
+            <option>Mobile Application Security</option>
+            <option>API Security</option>
+            <option>Cloud Security</option>
+            <option>DevSecOps</option>
+            <option>AI Security</option>
+            <option>Full Security Assessment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us about your security needs</label>
+          <textarea id="message" name="entry.361825917" rows="4" placeholder="Describe your environment, existing concerns, or desired outcomes..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Send Message &rarr;</button>
+        <p class="form-note">We respond within 24 hours. All communications are strictly confidential.</p>
+        <div class="form-success" id="formSuccess"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 4L6 10.5v10C6 30 13.1 39 22 41.2C30.9 39 38 30 38 20.5v-10L22 4z" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+            <text x="22" y="27" text-anchor="middle" fill="#00d4ff" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700">SP</text>
+          </svg>
+          <span>SP Infosec Labs</span>
+        </div>
+        <p class="footer-tagline">"Fortifying Digital Frontiers"</p>
+        <p class="footer-sub">Your trusted partner in securing what matters most — your digital assets, your business, your future.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Web App Security</a></li>
+          <li><a href="#services">Mobile Security</a></li>
+          <li><a href="#services">API Security</a></li>
+          <li><a href="#services">Cloud Security</a></li>
+          <li><a href="#services">DevSecOps</a></li>
+          <li><a href="#services">AI Security</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#why-us">Why Choose Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 SP Infosec Labs. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="GitHub">GH</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
